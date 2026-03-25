@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.a2a/bridge.db
+.a2a/tmp/
+*.tsbuildinfo

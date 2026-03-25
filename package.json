@@ -1,0 +1,32 @@
+{
+  "name": "claude-peer-pressure",
+  "version": "0.1.0",
+  "description": "Codex peer-reviews Claude's code via MCP + SQLite",
+  "type": "module",
+  "main": "dist/mcp-server.js",
+  "bin": {
+    "claude-peer-pressure": "dist/mcp-server.js",
+    "claude-peer-pressure-cli": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/mcp-server.js",
+    "cli": "node dist/cli.js",
+    "test": "tsx test/integration-test.ts",
+    "hook:install": "cp hooks/pre-commit.sh .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.28.0",
+    "better-sqlite3": "^12.8.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
